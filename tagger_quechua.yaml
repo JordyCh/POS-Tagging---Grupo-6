@@ -1,0 +1,124 @@
+!!python/object:nltk.tag.brill.BrillTagger
+_initial_tagger: &id001 !!python/object:nltk.tag.sequential.TrigramTagger
+  _context_to_tag:
+    ? !!python/tuple
+    - !!python/tuple [null]
+    - nn
+    : null
+    ? !!python/tuple
+    - !!python/tuple [NN]
+    - ','
+    : PUNC
+    ? !!python/tuple
+    - !!python/tuple [PRP, ADJ]
+    - .punc
+    : null
+    ? !!python/tuple
+    - !!python/tuple [PRP]
+    - sutin
+    : NN
+    ? !!python/tuple
+    - !!python/tuple []
+    - llaqtachayki
+    : null
+    ? !!python/tuple
+    - !!python/tuple [PRP, NN]
+    - kanmi
+    : NN
+  _n: 3
+  _taggers:
+  - *id001
+  - &id002 !!python/object:nltk.tag.sequential.BigramTagger
+    _context_to_tag:
+      ? !!python/tuple
+      - !!python/tuple [NN]
+      - ','
+      : PUNC
+      ? !!python/tuple
+      - !!python/tuple [PRP]
+      - pay
+      : VB
+      ? !!python/tuple
+      - !!python/tuple [null]
+      - nn
+      : null
+      ? !!python/tuple
+      - !!python/tuple [PRP]
+      - sutin
+      : NN
+      ? !!python/tuple
+      - !!python/tuple [NN]
+      - kanmi
+      : NN
+      ? !!python/tuple
+      - !!python/tuple []
+      - llaqtachayki
+      : null
+      ? !!python/tuple
+      - !!python/tuple [NN]
+      - kaniku
+      : PRP
+      ? !!python/tuple
+      - !!python/tuple [PRP]
+      - kani
+      : VB
+      ? !!python/tuple
+      - !!python/tuple [ADJ]
+      - .punc
+      : null
+    _n: 2
+    _taggers:
+    - *id002
+    - &id003 !!python/object:nltk.tag.sequential.UnigramTagger
+      _context_to_tag: {',': PUNC, .: PUNC, .punc: null, '?': PUNC, allinllachu: PRP,
+        allinllam: PRP, allquypa: PRP, ancha: ADV, apay: VB, ari: ADV, "ar\xED": ADV,
+        aswan: ADJ, atirqunichu: ADJ, chay: PRP, churapuy: VB, churay: VB, ckam: PRP,
+        ckaparipuni: VB, ckaparipunqui: VB, haykaptaq: PRP, huk: PRP, imam: PRP, iman: PRP,
+        imataq: PRP, imatataq: PRP, imaynataq: PRP, intiqa: PRP, kachkanki: VB, kachkarqa: VB,
+        kanchik: VB, kanchu: VB, kani: PRP, kaniku: VB, kanki: VB, kankichik: VB,
+        kanku: VB, kanmi: NN, kapuy: VB, kay: VB, khanka: ADJ, kichapuy: VB, kichay: VB,
+        kunan: ADV, kusichiyta: VB, kusisqam: ADJ, kutipuy: VB, kutiy: VB, linguistam: ADJ,
+        llakisqam: ADJ, llamkachkanki: VB, llamkaq: VB, llaqtachayki: null, mamay: PRP,
+        mamaypa: PRP, manachu: ADV, manam: ADV, maqanakun: VB, maymantataq: PRP, maypitaq: PRP,
+        mayqintaq: PRP, mikuni: VB, nn: null, nocka: PRP, panaypa: PRP, pay: PRP,
+        paykuna: PRP, paykunaqa: PRP, paymi: PRP, payqa: PRP, "payr\xED": VB, pim: PRP,
+        pipataq: PRP, piraq: PRP, pisipasqam: ADJ, pitaq: PRP, piwantaq: PRP, "pi\xF1am": ADJ,
+        "pi\xF1asqam": ADJ, pukllachkani: VB, pukllaqchu: VB, pukllaqmi: VB, "punchawy\xE1": VB,
+        "pu\xF1uchkan": VB, qam: PRP, qamkuna: PRP, "qamkunar\xED": PRP, qamri: PRP,
+        qawachkani: VB, qawachkanki: VB, qayna: ADV, raymipim: VB, rimankuchu: VB,
+        rimayku: VB, ruray: VB, sumaq: VB, sutin: NN, sutiyki: VB, taytay: PRP, taytaypa: PRP,
+        tiya-nki: VB, tiyachkani: VB, tiyachkanki: VB, tiyachkanku: VB, tiyan: VB,
+        tiyani: VB, tiyaniku: VB, tiyankichik: VB, tiyanku: VB, tiyaq: ADV, "tuparqankir\xED": VB,
+        tuparquni: VB, tusuni: VB, tusuqmi: VB, unqusqam: ADJ, wawqiypa: PRP, "wi\xF1ay": ADV,
+        yachachi: VB, yachachikuchkan: VB, yachachikuchkanku: VB, yachachinayachka: VB,
+        yachachiqniy: VB, yachakuchkani: VB, yaw: VB, "\xBF": PUNC, "\xF1a\xF1aypa": PRP,
+        "\xF1uqa": PRP, "\xF1uqanchik": PRP, "\xF1uqapa": PRP, "\xF1uqapas": PRP,
+        "\xF1uqaqa": PRP, "\xF1uqataq": PRP, "\xF1uqayku": PRP, "\xF1uqaykuqa": PRP}
+      _n: 1
+      _taggers:
+      - *id003
+      - &id004 !!python/object:nltk.tag.sequential.RegexpTagger
+        _regexs:
+        - !!python/tuple
+          - !!python/object/apply:re._compile ['^-?[0-9]+(.[0-9]+)?$', 32]
+          - PUNC
+        - !!python/tuple
+          - !!python/object/apply:re._compile [.*, 32]
+          - NN
+        _taggers:
+        - *id004
+    - *id004
+  - *id003
+  - *id004
+_rules: !!python/tuple []
+_training_stats:
+  finalacc: 0.9716157205240175
+  finalerrors: 13
+  initialacc: 0.9716157205240175
+  initialerrors: 13
+  min_acc: null
+  min_score: 3
+  rulescores: []
+  sequencecount: 136
+  templatecount: 10
+  tokencount: 458
